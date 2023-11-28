@@ -1,3 +1,5 @@
 # Unibus
 
-Daejeon University Bus infomation service
+capstone design project
+
+Daejeon University Shuttle Bus Web service
