@@ -1,22 +1,27 @@
+// 메인 카카오맵 
 <template>
   <div>
-    <div id="map"></div>
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 #map {
-  width: 90%;
-  height: 500px;
-  margin: auto;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
 
-.center-text {
-  text-align: center;
-}
 </style>
 
 <script>
+// import dotenv from "dotenv"
+
 export default {
   name: "KakaoMap",
   data() {
@@ -39,8 +44,7 @@ export default {
         this.$nextTick(() => {
           const script = document.createElement("script");
           script.async = true;
-          script.src =
-            "//dapi.kakao.com/v2/maps/sdk.js?appkey=ace68c85dbb602f66c5d9bc6701d7e98&autoload=false";
+          script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.VUE_APP_KAKAO}&autoload=false`;
           script.onload = () => {
             this.isScriptLoaded = true; // 스크립트가 로드된 상태로 표시
             window.kakao.maps.load(this.loadMap);
