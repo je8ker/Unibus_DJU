@@ -20,8 +20,6 @@
 </style>
 
 <script>
-// import dotenv from "dotenv"
-
 export default {
   name: "KakaoMap",
   data() {
@@ -77,7 +75,7 @@ export default {
               } else {
                 this.updateMarker(locPosition);
               }
-
+              //실시간 위치 추적
               navigator.geolocation.watchPosition((position) => {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;

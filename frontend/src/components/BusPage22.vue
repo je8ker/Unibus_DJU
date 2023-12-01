@@ -2,8 +2,9 @@
     <div>
         <h1 style="text-align: center; padding-bottom: 20px;">복합터미널<br></h1>
         <div class="map-container">
-            <div id="map" style="width: 100%; height: 100%;"></div>
-            <div id="roadview" style="width: 100%; height: 100%;"></div>
+            <div id="map" v-show="showMap" style="width: 100%; height: 100%;"></div>
+            <div id="roadview" v-show="!showMap" style="width: 100%; height: 100%;"></div>
+            <div class="custom-control"><v-btn @click="toggleMap">지도/로드뷰 전환</v-btn> </div>
         </div>
     </div>
 </template>
@@ -11,6 +12,13 @@
 <script>
 
 export default {
+    data(){
+        return{
+            showMap: true,
+            map: null,
+            roadview: null,
+        }
+    },
     mounted() {
         // Kakao 지도 API 로드 여부 확인
         if (window.kakao && window.kakao.maps) {
@@ -29,10 +37,18 @@ export default {
         }
     },
     methods: {
+        // 맵 로드뷰 전환
+        toggleMap() {
+        this.showMap = !this.showMap;
+    },
         initializeMap() {
             const mapContainer = document.getElementById('map');
             const roadviewContainer = document.getElementById('roadview');
-
+            const roadOptions = {
+                pan:150,
+                tilt:0,
+                zoom:0,
+            };
             const mapOptions = {
                 center: new window.kakao.maps.LatLng(36.3496, 127.4383),
                 level: 2,
@@ -47,7 +63,7 @@ export default {
             //마커 지도에 추가
             marker.setMap(map);
 
-            const roadview = new window.kakao.maps.Roadview(roadviewContainer);
+            const roadview = new window.kakao.maps.Roadview(roadviewContainer, roadOptions);
             map.addOverlayMapTypeId(window.kakao.maps.MapTypeId.ROADVIEW);
 
             // 위치 좌표
@@ -78,6 +94,7 @@ export default {
                     map.setCenter(position);
                 });
             });
+
 
             if (window.kakao.maps.event.addListener) {
                 window.kakao.maps.event.addListener(roadview, 'init', () => {
@@ -146,6 +163,12 @@ MapWalker.prototype.setMap = function (map) {
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%);
+}
+.custom-control {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
 }
 </style>
 
