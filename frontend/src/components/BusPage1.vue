@@ -3,35 +3,38 @@
     <v-container>
       <v-row justify="center" align="center">
         <v-col cols="auto">
-          <v-btn density="default">관저동</v-btn>
+          <v-btn density="default" @click="gotobusroute1" >관저동</v-btn>
         </v-col>
   
         <v-col cols="auto">
-          <v-btn density="default">송강동</v-btn>
+          <v-btn density="default" @click="gotobusroute2">송강동</v-btn>
         </v-col>
   
         <v-col cols="auto">
-          <v-btn density="default">만년동</v-btn>
+          <v-btn density="default" @click="gotobusroute3">만년동</v-btn>
         </v-col>
 
         <v-col cols="auto">
-          <v-btn density="default">도룡동</v-btn>
+          <v-btn density="default" @click="gotobusroute4">도룡동</v-btn>
         </v-col>
         
         <v-col cols="auto">
-          <v-btn density="default">테크노벨리</v-btn>
+          <v-btn density="default" @click="gotobusroute5">테크노벨리</v-btn>
         </v-col>
 
         <v-col cols="auto">
-          <v-btn density="default">내동</v-btn>
+          <v-btn density="default" @click="gotobusroute6">내동</v-btn>
         </v-col>
 
         <v-col cols="auto">
-          <v-btn density="default">자운대</v-btn>
+          <v-btn density="default" @click="gotobusroute7">자운대</v-btn>
         </v-col>
 
         <v-col cols="auto">
-          <v-btn density="default">도안</v-btn>
+          <v-btn density="default" @click="gotobusroute8">도안</v-btn>
+        </v-col>
+        <v-col cols="auto">
+          <v-btn density="default" @click="gotobusroute9">오정동</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -39,32 +42,44 @@
   
 <script>
 export default {
-    data: () => ({
-        //대전역 동광장, 복합터미널 방면
-        items1: [
-            { title: '대전역(동광장)' },
-            { title: '복합터미널' },
-        ],
-        //시내통학버스
-        items2: [
-            { title: '관저동 방면' }, //1코스
-            { title: '송강동 방면' }, //2코스
-            { title: '만년동(갤러리아) 방면' },//3코스
-            { title: '도룡동 누리관 방면' },//4코스
-            { title: '테크노벨리 방면' },//5코스
-            { title: '내동 방면' },//6코스
-            { title: '자운대 방면' },//7코스
-            { title: '도안 방면' },
-        ],
-        //일반시내버스
-        items3: [
-            { title: '603번' },
-            { title: '608번' },
-            { title: '611번' },
-            { title: '619번' },
-            { title: '605번' },
-        ],
-    }),
+  data() {
+
+    return {
+      username: "", //아이디
+      password: "", //비밀번호
+      visible: false,
+    };
+  },
+
+  methods: {
+    gotobusroute1() { // 관저동
+      this.$router.push("/busroute1");
+    },
+    gotobusroute2() { // 송강동
+      this.$router.push("/busroute2");
+    },
+    gotobusroute3() { // 만년동
+      this.$router.push("/busroute3");
+    },
+    gotobusroute4() { // 도룡동
+      this.$router.push("/busroute4");
+    },
+    gotobusroute5() { // 테크노벨리
+      this.$router.push("/busroute5");
+    },
+    gotobusroute6() { // 내동
+      this.$router.push("/busroute6");
+    },
+    gotobusroute7() { // 자운대
+      this.$router.push("/busroute7");
+    },
+    gotobusroute8() { // 도안동
+      this.$router.push("/busroute8");
+    },
+    gotobusroute9() { // 오정동
+      this.$router.push("/busroute9");
+    },
+  },
 }
 </script>
   

@@ -10,6 +10,15 @@ import BusPage22 from "@/components/BusPage22.vue";
 import BusPage3 from "@/components/BusPage3.vue";
 import InquiryPage from "@/components/InquiryPage.vue";
 import InquirylistPage from "@/components/InquirylistPage.vue";
+import BusRoute1 from "@/components/BusRoute/BusRoute1.vue";
+import BusRoute2 from "@/components/BusRoute/BusRoute2.vue";
+import BusRoute3 from "@/components/BusRoute/BusRoute3.vue";
+import BusRoute4 from "@/components/BusRoute/BusRoute4.vue";
+import BusRoute5 from "@/components/BusRoute/BusRoute5.vue";
+import BusRoute6 from "@/components/BusRoute/BusRoute6.vue";
+import BusRoute7 from "@/components/BusRoute/BusRoute7.vue";
+import BusRoute8 from "@/components/BusRoute/BusRoute8.vue";
+import BusRoute9 from "@/components/BusRoute/BusRoute9.vue";
 
 const routes = [
   {
@@ -55,7 +64,43 @@ const routes = [
   {
     path: "/inquirieslist",
     component: InquirylistPage,
-  }
+  },
+  {
+    path: "/busroute1",
+    component: BusRoute1,
+  },
+  {
+    path: "/busroute2",
+    component: BusRoute2,
+  },
+  {
+    path: "/busroute3",
+    component: BusRoute3,
+  },
+  {
+    path: "/busroute4",
+    component: BusRoute4,
+  },
+  {
+    path: "/busroute5",
+    component: BusRoute5,
+  },
+  {
+    path: "/busroute6",
+    component: BusRoute6,
+  },
+  {
+    path: "/busroute7",
+    component: BusRoute7,
+  },
+  {
+    path: "/busroute8",
+    component: BusRoute8,
+  },
+  {
+    path: "/busroute9",
+    component: BusRoute9,
+  },
 ];
 
 const router = createRouter({

@@ -157,8 +157,7 @@ MapWalker.prototype.setMap = function (map) {
 <style scoped>
 .map-container {
   width: 80%;
-  height: 80%;
-  /* display: flex; */
+  height: 70%;
   position: absolute;
   top: 50%; 
   left: 50%; 
